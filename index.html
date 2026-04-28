@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <meta name="description" content="Join us to celebrate the wedding of Akshay D I and Varshitha M D. View invitation details in English or Kannada.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wedding Invitation | Akshay & Varshitha">
+  <meta property="og:description" content="Open the wedding invitation and view ceremony details in English or Kannada.">
+  <meta property="og:image" content="og-preview.svg">
+  <meta property="og:url" content="index.html">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wedding Invitation | Akshay & Varshitha">
+  <meta name="twitter:description" content="Open the wedding invitation and view ceremony details in English or Kannada.">
+  <meta name="twitter:image" content="og-preview.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+Kannada:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="background-orbs" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<main class="center" id="invitationCard">
+  <div class="opening-stage" aria-hidden="true">
+    <div class="opening-flap left"></div>
+    <div class="opening-flap right"></div>
+    <div class="opening-seam"></div>
+    <div class="opening-seal">✦</div>
+  </div>
+  <div class="shimmer" aria-hidden="true"></div>
+  <div class="top-ribbon">
+    <span class="ribbon-dot"></span>
+    <span class="ribbon-line"></span>
+    <span class="ribbon-dot"></span>
+  </div>
+
+  <p class="kicker">ಮಂತ್ರ-ಮಂಗಳ ಆಹ್ವಾನ</p>
+  <h1>🕉️ ಶುಭ ವಿವಾಹ 🕉️</h1>
+  <p class="subtitle">Select Language / ಭಾಷೆ ಆಯ್ಕೆ ಮಾಡಿ</p>
+
+  <div class="buttons">
+    <a href="invitation.html" class="btn language-card" data-target="invitation.html">
+      <span class="lang-label">English</span>
+      <span class="lang-sub">Open Invitation</span>
+    </a>
+    <a href="invitation_kn.html" class="btn language-card" data-target="invitation_kn.html">
+      <span class="lang-label">ಕನ್ನಡ</span>
+      <span class="lang-sub">ಆಹ್ವಾನ ತೆರೆಯಿರಿ</span>
+    </a>
+  </div>
+
+  <p class="footer-note">Tap a card to open the invitation with a soft transition.</p>
+</main>
+
+<script>
+  const invitationCard = document.getElementById("invitationCard");
+  const languageCards = document.querySelectorAll(".language-card");
+  let isNavigating = false;
+
+  function resetSelectorState() {
+    isNavigating = false;
+    invitationCard.classList.remove("card-open", "opening");
+    document.body.classList.remove("launching");
+
+    languageCards.forEach((link) => {
+      link.removeAttribute("aria-disabled");
+      link.style.pointerEvents = "auto";
+    });
+  }
+
+  window.addEventListener("pageshow", resetSelectorState);
+  window.addEventListener("pagehide", resetSelectorState);
+
+  languageCards.forEach((card) => {
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (isNavigating) {
+        return;
+      }
+
+      isNavigating = true;
+      const target = card.getAttribute("data-target");
+      invitationCard.classList.add("card-open");
+      invitationCard.classList.add("opening");
+      languageCards.forEach((link) => {
+        link.setAttribute("aria-disabled", "true");
+        link.style.pointerEvents = "none";
+      });
+
+      window.setTimeout(() => {
+        window.location.assign(target);
+      }, 700);
+    });
+  });
+</script>
+
+</body>
+</html>

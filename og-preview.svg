@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Wedding invitation preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b1310"/>
+      <stop offset="55%" stop-color="#3a261f"/>
+      <stop offset="100%" stop-color="#5b3b2f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.25" r="0.7">
+      <stop offset="0%" stop-color="#f3d9a0" stop-opacity="0.48"/>
+      <stop offset="100%" stop-color="#f3d9a0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff6e6" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f5ddb2" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <rect x="80" y="60" width="1040" height="510" rx="36" fill="none" stroke="#d8b363" stroke-opacity="0.42" stroke-width="2"/>
+  <rect x="190" y="110" width="820" height="410" rx="28" fill="url(#panel)" stroke="#c89a45" stroke-width="2"/>
+
+  <text x="600" y="205" text-anchor="middle" fill="#7a4a23" font-family="Playfair Display, Georgia, serif" font-size="34" letter-spacing="3">WEDDING INVITATION</text>
+  <text x="600" y="290" text-anchor="middle" fill="#6a1d2a" font-family="Playfair Display, Georgia, serif" font-size="62">Dhanush  and  Keerthana</text>
+  <text x="600" y="350" text-anchor="middle" fill="#3b2518" font-family="Cormorant Garamond, Georgia, serif" font-size="34">Monday, 4 May 2026  |  9:35 AM</text>
+  <text x="600" y="406" text-anchor="middle" fill="#1f5742" font-family="Cormorant Garamond, Georgia, serif" font-size="30">Sri Jyothinandamayi Samudaya Bhavan</text>
+  <text x="600" y="474" text-anchor="middle" fill="#7a4a23" font-family="Cormorant Garamond, Georgia, serif" font-size="27">With blessings, we invite you to celebrate with us.</text>
+</svg>
